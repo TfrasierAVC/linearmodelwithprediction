@@ -107,24 +107,35 @@ interval= 'prediction')
 ```
 
 ## Model 3
-Find an equation that expresses SIMS as a function of arm+Grip strength.
+Find an equation that expresses SIMS as a function of Arm+Grip strength.
 
 ## Results 
 
 
 ## Graphhical Results
 
-```{r}
-plot(SIMS~ARM+GRIP,data=data)
-```
+ There are no graphicakl results for model 3 because i cant put two variables on one axis.
 
 
 ## Numerical Results
 
-
+There are no numerical results since we have sims as a function of two variables. 
 
 
 ## Inference
 
+```{r}
+Model3 = lm(SIMS~ARM+GRIP, data = data)
+print(summary(Model3))
+```
 
+```{r}
+plot(SIMS~ARM+GRIP,data=data)
+abline(Model3, col='blue')
+```
 
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model3, newdata,
+interval= 'prediction')
+```
