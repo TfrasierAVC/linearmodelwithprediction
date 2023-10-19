@@ -25,6 +25,7 @@ Find an equation that expresses SIMS as a function of arm strength.
 ```{r}
 plot(SIMS~ARM,data=data)
 ```
+
 As arm strengthh increases the sims score also increases. This is a positive trend between arm strength and sims score.
 
 ## Numerical Results
@@ -46,4 +47,46 @@ print(summary(Model1))
 plot(SIMS~ARM,data=data)
 abline(Model1, col='purple')
 ```
+
 The line and the data shows the best linear fits. If you increase arm score by 1 sims score goes up by 0.05
+
+## Model2
+find the equation that expresses SIMS as a function to GRIP.
+
+## Results 
+
+
+## Graphical Results
+
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+
+
+As GRIP strength increases the sims score also increases. This is a positive trend between GRIP strength and sims score.
+
+
+## Numerical Results
+
+
+
+```{r}
+cor(data$SIMS, data$GRIP,)
+```
+
+We have a positive correlation, with scattered.
+## Inference
+
+```{r}
+Model2 = lm(SIMS~GRIP, data = data)
+print(summary(Model2))
+```
+
+```{r}
+plot(SIMS~GRIP,data=data)
+abline(Model2, col='blue')
+```
+
+
+The line and the data shows the best linear fits. If you increase GRIP score by 1 sims score goes up by 0.05
+
