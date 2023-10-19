@@ -44,6 +44,14 @@ print(summary(Model1))
 
 
 ```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model1, newdata,
+interval= 'prediction')
+```
+
+
+
+```{r}
 plot(SIMS~ARM,data=data)
 abline(Model1, col='purple')
 ```
@@ -75,6 +83,7 @@ cor(data$SIMS, data$GRIP,)
 ```
 
 We have a positive correlation, with scattered.
+
 ## Inference
 
 ```{r}
@@ -88,5 +97,34 @@ abline(Model2, col='blue')
 ```
 
 
-The line and the data shows the best linear fits. If you increase GRIP score by 1 sims score goes up by 0.05
+The line and the data shows the best linear fits. If you increase GRIP score by 1 sims score goes up by 0.0454
+
+
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model2, newdata,
+interval= 'prediction')
+```
+
+## Model 3
+Find an equation that expresses SIMS as a function of arm+Grip strength.
+
+## Results 
+
+
+## Graphhical Results
+
+```{r}
+plot(SIMS~ARM+GRIP,data=data)
+```
+
+
+## Numerical Results
+
+
+
+
+## Inference
+
+
 
